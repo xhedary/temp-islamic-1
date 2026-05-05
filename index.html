@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة زفاف | أحمد & فاطمة</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Premium Arabic & Display Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     FLOATING PARTICLES CANVAS
+═══════════════════════════════════════════════ -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ═══════════════════════════════════════════════
+     MUSIC PLAYER
+═══════════════════════════════════════════════ -->
+<button class="music-btn" id="musicBtn" aria-label="تشغيل الموسيقى">
+  <span class="music-icon">♪</span>
+  <span class="music-label">موسيقى</span>
+</button>
+<audio id="bgMusic" loop>
+  <source src="/assets/wedding.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1: HERO
+═══════════════════════════════════════════════ -->
+<section class="hero reveal">
+  <div class="hero-bg-image"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="bismillah reveal-child">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+  <div class="arch-frame reveal-child">
+    <svg class="arch-svg" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="archGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#c9a84c;stop-opacity:0.9" />
+          <stop offset="100%" style="stop-color:#e8d5a3;stop-opacity:0.5" />
+        </linearGradient>
+      </defs>
+      <!-- Arch shape -->
+      <path d="M 30 480 L 30 200 Q 30 30 160 30 Q 290 30 290 200 L 290 480 Z"
+            fill="none" stroke="url(#archGrad)" stroke-width="1.5" opacity="0.8"/>
+      <!-- Inner arch -->
+      <path d="M 55 480 L 55 210 Q 55 65 160 65 Q 265 65 265 210 L 265 480 Z"
+            fill="none" stroke="url(#archGrad)" stroke-width="0.8" opacity="0.5"/>
+      <!-- Top ornament -->
+      <circle cx="160" cy="30" r="6" fill="#c9a84c" opacity="0.9"/>
+      <circle cx="160" cy="30" r="12" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+      <!-- Corner ornaments -->
+      <circle cx="30" cy="200" r="3" fill="#c9a84c" opacity="0.7"/>
+      <circle cx="290" cy="200" r="3" fill="#c9a84c" opacity="0.7"/>
+    </svg>
+
+    <div class="hero-content">
+      <div class="couple-pre">يسعدنا دعوتكم</div>
+      <div class="couple-names">
+        <span class="name-bride">فاطمة</span>
+        <span class="name-divider">
+          <svg viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="10" x2="20" y2="10" stroke="#c9a84c" stroke-width="0.8"/>
+            <circle cx="30" cy="10" r="4" fill="none" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="30" cy="10" r="1.5" fill="#c9a84c"/>
+            <line x1="40" y1="10" x2="60" y2="10" stroke="#c9a84c" stroke-width="0.8"/>
+          </svg>
+        </span>
+        <span class="name-groom">أحمد</span>
+      </div>
+      <div class="hero-date-tag">١٥ ذو القعدة ١٤٤٦</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint reveal-child">
+    <span>تمرير للأسفل</span>
+    <div class="scroll-arrow">↓</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2: INVITATION TEXT
+═══════════════════════════════════════════════ -->
+<section class="invitation-text reveal">
+  <div class="geo-divider top"></div>
+  <div class="section-inner">
+    <div class="star-ornament">✦</div>
+    <p class="invite-verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا"</p>
+    <div class="verse-ref">سورة الروم، آية ٢١</div>
+    <div class="ornament-line"></div>
+    <p class="invite-main">
+      بكلّ حبٍّ وسعادةٍ وامتنان،<br />
+      يسعدنا أن ندعوكم لمشاركتنا<br />
+      فرحة زواجنا المبارك
+    </p>
+    <p class="invite-sub">نرجو أن تكونوا جزءًا من هذه اللحظة الجميلة</p>
+  </div>
+  <div class="geo-divider bottom"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3: EVENT DETAILS
+═══════════════════════════════════════════════ -->
+<section class="event-details reveal">
+  <div class="section-title">
+    <div class="title-ornament">◆</div>
+    <h2>تفاصيل الحفل</h2>
+    <div class="title-ornament">◆</div>
+  </div>
+
+  <div class="details-grid">
+    <div class="detail-card reveal-child">
+      <div class="detail-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="detail-label">التاريخ</div>
+      <div class="detail-value">الجمعة، ١٥ مايو ٢٠٢٦</div>
+      <div class="detail-arabic-date">١٥ ذو القعدة ١٤٤٧</div>
+    </div>
+
+    <div class="detail-card reveal-child">
+      <div class="detail-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+          <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="detail-label">الوقت</div>
+      <div class="detail-value">السابعة مساءً</div>
+      <div class="detail-arabic-date">٧:٠٠ م</div>
+    </div>
+
+    <div class="detail-card reveal-child">
+      <div class="detail-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="detail-label">المكان</div>
+      <div class="detail-value">قاعة النور الكبرى</div>
+      <div class="detail-arabic-date">الرياض، المملكة العربية السعودية</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4: COUNTDOWN
+═══════════════════════════════════════════════ -->
+<section class="countdown-section reveal">
+  <div class="countdown-bg"></div>
+  <div class="countdown-inner">
+    <div class="section-title light">
+      <div class="title-ornament">◆</div>
+      <h2>العدّ التنازلي</h2>
+      <div class="title-ornament">◆</div>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-item">
+        <div class="countdown-num" id="cd-days">٠٠</div>
+        <div class="countdown-label">يومًا</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item">
+        <div class="countdown-num" id="cd-hours">٠٠</div>
+        <div class="countdown-label">ساعة</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item">
+        <div class="countdown-num" id="cd-mins">٠٠</div>
+        <div class="countdown-label">دقيقة</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-item">
+        <div class="countdown-num" id="cd-secs">٠٠</div>
+        <div class="countdown-label">ثانية</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5: LOVE STORY
+═══════════════════════════════════════════════ -->
+<section class="love-story reveal">
+  <div class="section-title">
+    <div class="title-ornament">◆</div>
+    <h2>قصّتنا</h2>
+    <div class="title-ornament">◆</div>
+  </div>
+  <div class="story-timeline">
+    <div class="story-item reveal-child">
+      <div class="story-dot"></div>
+      <div class="story-year">٢٠٢٢</div>
+      <div class="story-text">كان اللقاء الأول، لحظةٌ بسيطة غيّرت كلّ شيء</div>
+    </div>
+    <div class="story-line"></div>
+    <div class="story-item reveal-child">
+      <div class="story-dot"></div>
+      <div class="story-year">٢٠٢٣</div>
+      <div class="story-text">تعمّقت المعرفة، وأيقنّا أن القدر جمعنا بخير</div>
+    </div>
+    <div class="story-line"></div>
+    <div class="story-item reveal-child">
+      <div class="story-dot"></div>
+      <div class="story-year">٢٠٢٦</div>
+      <div class="story-text">اليوم نبدأ فصلًا جديدًا تحت مظلّة الله وبركته</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6: GALLERY
+═══════════════════════════════════════════════ -->
+<section class="gallery-section reveal">
+  <div class="section-title">
+    <div class="title-ornament">◆</div>
+    <h2>لقطات من القصة</h2>
+    <div class="title-ornament">◆</div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall reveal-child">
+      <img src="/assets/1.jpg" alt="قاعة الزفاف" loading="lazy" />
+      <div class="gallery-overlay"><span>الحفل</span></div>
+    </div>
+    <div class="gallery-item reveal-child">
+      <img src="/assets/2.jpg" alt="الورود" loading="lazy" />
+      <div class="gallery-overlay"><span>الورود</span></div>
+    </div>
+    <div class="gallery-item reveal-child">
+      <img src="/assets/3.jpg" alt="العمارة الإسلامية" loading="lazy" />
+      <div class="gallery-overlay"><span>النور</span></div>
+    </div>
+    <div class="gallery-item wide reveal-child">
+      <img src="/assets/4.jpg" alt="حفل الزفاف" loading="lazy" />
+      <div class="gallery-overlay"><span>الفرح</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7: LOCATION
+═══════════════════════════════════════════════ -->
+<section class="location-section reveal">
+  <div class="section-title">
+    <div class="title-ornament">◆</div>
+    <h2>الموقع</h2>
+    <div class="title-ornament">◆</div>
+  </div>
+  <div class="location-card">
+    <div class="location-map-preview">
+      <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=800&q=80" alt="خريطة المكان" />
+      <div class="map-overlay">
+        <div class="map-pin">📍</div>
+        <div class="map-label">قاعة النور الكبرى</div>
+      </div>
+    </div>
+    <a href="https://maps.google.com" target="_blank" class="location-btn">
+      <span>عرض الموقع على الخريطة</span>
+      <span class="btn-arrow">←</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8: RSVP
+═══════════════════════════════════════════════ -->
+<section class="rsvp-section reveal">
+  <div class="rsvp-bg"></div>
+  <div class="rsvp-inner">
+    <div class="section-title light">
+      <div class="title-ornament">◆</div>
+      <h2>تأكيد الحضور</h2>
+      <div class="title-ornament">◆</div>
+    </div>
+    <p class="rsvp-subtitle">يُسعدنا معرفة إن كنتم ستشاركوننا هذه اللحظة</p>
+
+    <div class="rsvp-form-card">
+      <!-- Name -->
+      <div class="form-group">
+        <label class="form-label" for="rsvp-name">الاسم الكريم</label>
+        <input type="text" id="rsvp-name" class="form-input" placeholder="أدخل اسمك" />
+      </div>
+
+      <!-- Attendance -->
+      <div class="form-group">
+        <label class="form-label">هل ستحضر؟</label>
+        <div class="attendance-options">
+          <label class="attendance-opt" id="opt-yes">
+            <input type="radio" name="attendance" value="yes" />
+            <span class="opt-icon">✓</span>
+            <span>سأحضر بإذن الله</span>
+          </label>
+          <label class="attendance-opt" id="opt-no">
+            <input type="radio" name="attendance" value="no" />
+            <span class="opt-icon">✗</span>
+            <span>لن أتمكن من الحضور</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Guests -->
+      <div class="form-group">
+        <label class="form-label" for="rsvp-guests">عدد الحضور (بمن فيهم أنت)</label>
+        <input type="number" id="rsvp-guests" class="form-input" placeholder="٢" min="1" max="10" value="1" />
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label class="form-label" for="rsvp-msg">رسالة للعروسين (اختياري)</label>
+        <textarea id="rsvp-msg" class="form-input form-textarea" placeholder="أكتب تهنئتك هنا..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button class="rsvp-btn" id="rsvpBtn" onclick="submitRSVP()">
+        <span id="rsvp-btn-text">إرسال التأكيد</span>
+        <div class="rsvp-loader hidden" id="rsvpLoader"></div>
+      </button>
+
+      <!-- Messages -->
+      <div class="rsvp-success hidden" id="rsvpSuccess">
+        <div class="success-icon">✦</div>
+        <div class="success-title">شكرًا جزيلًا!</div>
+        <div class="success-text">تم استلام تأكيدكم، ننتظركم بكل حب وشوق 🤍</div>
+      </div>
+      <div class="rsvp-error hidden" id="rsvpError">
+        <div>حدث خطأ ما، يرجى المحاولة مرة أخرى</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9: DRESS CODE
+═══════════════════════════════════════════════ -->
+<section class="dresscode-section reveal">
+  <div class="section-title">
+    <div class="title-ornament">◆</div>
+    <h2>الزي المناسب</h2>
+    <div class="title-ornament">◆</div>
+  </div>
+  <div class="dresscode-card">
+    <div class="dresscode-item reveal-child">
+      <div class="dresscode-icon">
+        <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M30 10 C20 10 15 20 15 30 L10 70 L50 70 L45 30 C45 20 40 10 30 10Z" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+          <path d="M15 30 L5 45 L15 50 L15 30Z" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+          <path d="M45 30 L55 45 L45 50 L45 30Z" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+        </svg>
+      </div>
+      <div class="dresscode-text">
+        <div class="dresscode-title">السادة</div>
+        <div class="dresscode-desc">الزي الرسمي الكلاسيكي<br/>اللون الأبيض أو البيج</div>
+      </div>
+    </div>
+    <div class="dresscode-divider"></div>
+    <div class="dresscode-item reveal-child">
+      <div class="dresscode-icon">
+        <svg viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M30 8 C18 8 12 18 12 30 L8 80 L52 80 L48 30 C48 18 42 8 30 8Z" stroke="currentColor" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+          <ellipse cx="30" cy="10" rx="14" ry="6" stroke="currentColor" stroke-width="1" fill="rgba(201,168,76,0.05)"/>
+        </svg>
+      </div>
+      <div class="dresscode-text">
+        <div class="dresscode-title">السيدات</div>
+        <div class="dresscode-desc">الزي المحتشم الأنيق<br/>ألوان ناعمة وهادئة</div>
+      </div>
+    </div>
+  </div>
+  <div class="dresscode-note">يُفضَّل الألوان: الأبيض · الكريمي · الذهبي الفاتح · الأخضر الزيتي</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10: FINAL MESSAGE
+═══════════════════════════════════════════════ -->
+<section class="final-section reveal">
+  <div class="final-bg-image"></div>
+  <div class="final-overlay"></div>
+  <div class="final-inner">
+    <div class="final-geo"></div>
+    <div class="final-bismillah">✦ ✦ ✦</div>
+    <h2 class="final-title">ننتظركم بكلّ حبٍّ وشوق</h2>
+    <p class="final-verse">
+      "اللهم اجعل هذا الزواج بركةً ورحمةً وسكينةً"
+    </p>
+    <div class="final-names">أحمد & فاطمة</div>
+    <div class="final-date">١٥ مايو ٢٠٢٦</div>
+    <div class="final-ornament">
+      <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="20" x2="70" y2="20" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+        <polygon points="85,20 92,14 99,20 92,26" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.8"/>
+        <circle cx="100" cy="20" r="3" fill="#c9a84c" opacity="0.9"/>
+        <polygon points="101,20 108,14 115,20 108,26" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.8"/>
+        <line x1="130" y1="20" x2="200" y2="20" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
